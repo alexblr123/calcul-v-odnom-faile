@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <style>
+        #block {
+            padding: 0%;
+            width: 600px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        
+        #input {
+            height: 100px;
+            width: 600px;
+            border: 1px solid black;
+        }
+        
+        #button-block {
+            display: grid;
+            width: 600px;
+            height: 200px;
+            grid-template-columns: 150px 150px 150px 150px;
+            grid-template-rows: 50px 50px 50px 50px;
+        }
+        
+        .button {
+            border-style: unset;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .buts {
+            background-color: aquamarine;
+            border-radius: 15px;
+            border: black 1px solid;
+        }
+        
+        #text {
+            width: 595px;
+            height: 96px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <script defer>
+        let inputs = document.getElementsByClassName('buts');
+        let text = document.getElementById('text');
+
+        function getValue(value) {
+
+            text.value += value;
+
+        }
+
+        function doSums() {
+            alert(eval(text.value))
+        }
+
+        function removeLast() {
+            let index = text.value.length;
+            console.log(index);
+            text.value = text.value.substring(0, index - 1);
+        }
+
+        function lolikop() {
+            text.value = ''
+        }
+    </script>
+</head>
+
+<body>
+    <div id="block">
+        <div id="input"><input type="text" id="text" placeholder="Напишите простейший пример(буквы запрещены)"></div>
+        <div id="button-block">
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="1" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="2" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="3" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="+" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="4" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="5" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="6" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="-" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="7" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="8" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="9" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="*" class="buts"></div>
+            <div class="button"><input type="button" onclick="lolikop()" value="Clear" class="buts"></div>
+            <div class="button"><input type="button" onclick="getValue(event.target.value)" value="0" class="buts"></div>
+            <div class="button"><input type="button" onclick="removeLast()" value="Remove" class="buts"></div>
+            <div class="button"><input type="button" onclick="doSums()" value="=" class="buts"></div>
+        </div>
+    </div>
+</body>
+
+</html>
